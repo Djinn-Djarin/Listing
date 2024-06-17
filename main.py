@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 import streamlit as st
 from sklearn.preprocessing import MinMaxScaler
+from sklearn.preprocessing import StandardScaler
 
 file = st.file_uploader(" Upload your excel file here", type=['xlsx'])
 if file:
@@ -20,7 +21,8 @@ if file:
         except Exception as e:  
             print("An error occurred:", e)
 
-    scaling = MinMaxScaler()
+    # scaling = MinMaxScaler()
+    scaling = StandardScaler()
     scaled_df2 = scaling.fit_transform(df2)
     df2 = pd.DataFrame(scaled_df2,columns=df2.columns)
 
