@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 import streamlit as st
 from sklearn.preprocessing import MinMaxScaler
-st.write("MinMax Scaler")
+st.title("MinMax Scaler")
 file = st.file_uploader(" Upload your excel file here", type=['xlsx'])
 if file:
     df= pd.read_excel(file)

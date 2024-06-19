@@ -4,7 +4,7 @@ import streamlit as st
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.preprocessing import StandardScaler
 from sklearn.preprocessing import RobustScaler
-
+st.title('Robust Scaler')
 file = st.file_uploader(" Upload your excel file here", type=['xlsx'])
 if file:
     df= pd.read_excel(file)
