@@ -25,7 +25,9 @@ if file:
     scaling = StandardScaler()
     scaled_df2 = scaling.fit_transform(df2)
     df2 = pd.DataFrame(scaled_df2,columns=df2.columns)
-
+    multipliers = {'Competitor Performance Score': 0.3, 'Title Density': 0.25 ,  'Cerebro IQ Score' :0.25,'Competitor Rank (avg)':0.04,'Search Volume':0.16}
+    for col, multiplier in multipliers.items():
+        df2[col] *= multiplier
     # print(df2.head())
 
     # df_keyphrase = df.iloc[:,0]
